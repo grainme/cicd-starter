@@ -1,0 +1,28 @@
+# this is a basic workflow called "ci"
+# a workflow is triggered when an event occurs in a Github repo
+# for this specific working, the event is a "pull request" into "main"
+name: ci
+
+on:
+  pull_request:
+    branches: [main]
+
+# a workflow is made up of one or more jobs.
+# a job is a set of steps that run on the same "runner", which is a VM
+# that run the "job" on Github's servers.
+jobs:
+  tests:
+    name: Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: "1.25.1"
+
+      - name: Runs unit tests
+        run: go test ./... -cover
