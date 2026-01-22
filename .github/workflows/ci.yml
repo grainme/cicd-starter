@@ -10,13 +10,6 @@ on:
 # a workflow is made up of one or more jobs.
 # a job is a set of steps that run on the same "runner", which is a VM
 # that run the "job" on Github's servers.
-#
-# questions:
-# - is "tests" a special keyword for github actions?
-# - if multiple jobs are defined, will they run in parallel?
-# - how does Github's servers support this, i mean thousands if not million of projects are running their CIs at the same time, do they have unlimited servers or what?
-# - what does "check out code" mean?
-# - what is "actions/", and where does it come from?
 jobs:
   tests:
     name: Tests
@@ -31,5 +24,5 @@ jobs:
         with:
           go-version: "1.25.1"
 
-      - name: Go version
-        run: go version
+      - name: Runs unit tests
+        run: go test ./...
