@@ -1,6 +1,6 @@
 # learn-cicd-starter (Notely)
 
-![Test Coverage](https://github.com/grainme/cicd-starter/actions/workflows/ci/badge.svg)
+![CI](https://github.com/grainme/cicd-starter/actions/workflows/ci.yml/badge.svg)
 
 This repo contains the starter code for the "Notely" application for the "Learn CICD" course on [Boot.dev](https://boot.dev).
 
